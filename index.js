@@ -773,7 +773,7 @@ run().catch(console.dir);
 
 // ---------------------------
 // Start Server
-// ---------------------------
+
 app.listen(port, () => {
   console.log(`🚀 ScholarStream server listening on port ${port}`);
 });
