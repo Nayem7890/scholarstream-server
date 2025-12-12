@@ -52,9 +52,9 @@ async function run() {
     const applicationsCollection = db.collection("applications");
     const reviewsCollection = db.collection("reviews");
 
-    // ---------------------------
+   
     // Auth Middlewares
-    // ---------------------------
+    
     const verifyJWT = (req, res, next) => {
       const authHeader = req.headers.authorization;
       if (!authHeader) {
