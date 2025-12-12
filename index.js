@@ -685,24 +685,29 @@ async function run() {
           .toArray();
 
         // Recent applications
-        const recentApplicationsRaw = await applicationsCollection
-          .find({})
-          .sort({ applicationDate: -1 })
-          .limit(5)
-          .project({
-            applicantName: 1,
-            scholarshipName: 1,
-            applicationStatus: 1,
-            applicationDate: 1,
-          })
-          .toArray();
+const recentApplicationsRaw = await applicationsCollection
+  .find({})
+  .sort({ applicationDate: -1 })
+  .limit(5)
+  .project({
+    userName: 1,
+    userEmail: 1,
+    universityName: 1,
+    scholarshipName: 1,      // in case you start storing this
+    applicationStatus: 1,
+    applicationDate: 1,
+  })
+  .toArray();
 
-        const recentApplications = recentApplicationsRaw.map((app) => ({
-          applicantName: app.applicantName,
-          scholarshipName: app.scholarshipName,
-          status: app.applicationStatus,
-          date: app.applicationDate,
-        }));
+const recentApplications = recentApplicationsRaw.map((app) => ({
+  // what frontend expects:
+  applicantName: app.userName || app.userEmail || "Unknown user",
+  scholarshipName:
+    app.scholarshipName || app.universityName || "Unknown scholarship",
+  status: app.applicationStatus,
+  date: app.applicationDate,
+}));
+
 
         // Users by role
         const usersByRole = {
