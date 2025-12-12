@@ -151,7 +151,7 @@ async function run() {
     });
 
     // Get all users (Admin only, optional ?role=Student|Moderator|Admin)
-    // ✅ Wrapped in { data: users }
+   
     app.get("/users", verifyJWT, verifyAdmin, async (req, res) => {
       try {
         const { role } = req.query;
