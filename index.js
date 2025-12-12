@@ -700,7 +700,7 @@ const recentApplicationsRaw = await applicationsCollection
   .toArray();
 
 const recentApplications = recentApplicationsRaw.map((app) => ({
-  // what frontend expects:
+  // what frontend expects
   applicantName: app.userName || app.userEmail || "Unknown user",
   scholarshipName:
     app.scholarshipName || app.universityName || "Unknown scholarship",
