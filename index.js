@@ -99,9 +99,9 @@ async function run() {
       next();
     };
 
-    // ---------------------------
+    
     // Basic Health Route
-    // ---------------------------
+    
     app.get("/", (req, res) => {
       res.send("ScholarStream Server Running");
     });
