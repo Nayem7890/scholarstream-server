@@ -771,7 +771,6 @@ async function run() {
 
 run().catch(console.dir);
 
-// ---------------------------
 // Start Server
 
 app.listen(port, () => {
