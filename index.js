@@ -23,9 +23,9 @@ app.use(
 );
 app.use(express.json());
 
-// ---------------------------
+
 // MongoDB Client
-// ---------------------------
+
 const uri = process.env.MONGODB_URI;
 
 if (!uri) {
