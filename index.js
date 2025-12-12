@@ -693,7 +693,7 @@ const recentApplicationsRaw = await applicationsCollection
     userName: 1,
     userEmail: 1,
     universityName: 1,
-    scholarshipName: 1,      // in case you start storing this
+    scholarshipName: 1,      
     applicationStatus: 1,
     applicationDate: 1,
   })
