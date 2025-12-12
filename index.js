@@ -9,9 +9,9 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const app = express();
 const port = process.env.PORT || 3000;
 
-// ---------------------------
+
 // Global Middlewares
-// ---------------------------
+
 app.use(
   cors({
     origin: [
